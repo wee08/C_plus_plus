@@ -66,13 +66,13 @@ void displayQueue(Queue * q){
     Box * b = q -> front;
     while (b != nullptr)    
     {
-        cout << "\n\n";   
+        cout << "\n";   
         
         cout << "ID: " << b -> id << " ";
         cout << "Name: " << b -> name << " ";
         cout << "Gender: " << b -> gender << " ";
 
-        cout << "\n\n";   
+        cout << "\n";   
         b = b -> next;
     }
 }
@@ -90,22 +90,28 @@ string peekQueue(Queue * q){
     if(!isEmpty(q)){
         return q -> front -> name;
     }else{
-        cout << "queue is empty! \n\n";
+        cout << "queue is empty! \n";
         return "";
     }
 }
 
 int main(){
     Queue * q = createEmptyQueue();
-    enqueue(q, 1,"Nithya",'M');
-    enqueue(q, 2,"Bopha",'F');
-    enqueue(q, 3,"Dara",'F');
+    enqueue(q, 2,"Dara",'M');
+    enqueue(q, 3,"Panha",'M');
+    enqueue(q, 4,"Pisey",'F');
+    enqueue(q, 5,"Ronan",'M');
 
-    cout << peekQueue(q);
+    cout << peekQueue(q) << endl;
+
+    displayQueue(q);
     
     dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
 
-    isFull(q);
-
-    cout << peekQueue(q);
+    displayQueue(q);
 }
