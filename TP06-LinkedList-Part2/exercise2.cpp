@@ -28,8 +28,8 @@ void addPerson(List *ls, string name){
         ls -> tail = e ;
     }else {
         ls -> head -> prev = e;
+        ls -> head = e;
     }
-    ls -> head = e;
     ls -> n++;
 }
 void displayAllData(List *ls){

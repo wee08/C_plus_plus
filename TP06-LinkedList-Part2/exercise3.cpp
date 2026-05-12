@@ -1,65 +1,110 @@
 #include <iostream>
 using namespace std;
-struct Product{
-    string data;
+
+struct Product {
+    string name;
+    int price;
+    int id;
+    string importDate; //mm-dd-yyyy
+    string color;
+    int storage;
+
     Product *next;
     Product *prev;
 };
-struct ListProduct{
+
+struct List {
     int size;
+
     Product *head;
     Product *tail;
 };
 
-ListProduct *createEmptyProductList(){
-    ListProduct *lp = new ListProduct();
-    lp -> size = 0;
-    lp -> head = nullptr;
-    lp -> tail = nullptr;
+List * createEmptyList(){
+    List * ls = new List();
 
-    return lp;
+    ls -> size = 0;
+    ls -> head = nullptr;
+    ls -> tail = nullptr;
+
+    return ls;
 }
-void addProductToBeg(ListProduct *lp, string productName){
-    Product *p = new Product;
-    p -> data = productName;
-    p -> next = lp -> head;
-    p -> prev = nullptr;
-    if(lp -> size == 0){
-        lp -> tail = p;
+
+void addBegin(List  * ls,string name, int price, int id, string importDate, string color, int storage){
+    Product * p = new Product;
+
+        p -> name = name;
+        p -> price = price;
+        p -> id = id;
+        p -> importDate = importDate;
+        p -> color = color;
+        p -> storage = storage;
+        p -> next = ls -> head;
+        p -> prev = nullptr;
+    
+    if( ls -> size == 0){
+        ls -> head = p;
     }else {
-        lp -> head -> prev = p;
+        ls -> head -> prev = p;
     }
-    lp -> head = p;
-    lp -> size++;
+
+    ls -> head = p;
+    ls -> size++;
 }
-void addProductToEnd(ListProduct *lp, string productName){
-    Product *p = new Product;
-    p -> data = productName;
-    p -> next = nullptr;
-    p -> prev = lp -> tail;
-    if(lp -> size == 0){
-        lp -> head = p;
+void addEnd(List * ls, string name, int price, int id,string importDate, string color, int storage){
+    Product * p = new Product;
+
+        p -> name = name;
+        p -> price = price;
+        p -> id = id;
+        p -> importDate = importDate;
+        p -> color = color;
+        p -> storage = storage;
+        p -> prev = ls -> tail;
+
+    if( ls -> size == 0){
+        ls -> tail = p;
     }else {
-        lp -> tail -> next = p;
+        ls -> tail -> next = p;
     }
-    lp -> tail = p;
-    lp -> size++;
+    ls -> tail = p;
+    ls -> size++;
 }
-void displayAllProduct(ListProduct *lp){
-    Product *p = lp -> head;
-    while(p != nullptr){
-        cout << p -> data << endl;
+
+void display(List * ls){
+    Product * p = ls -> head;
+    while ( (p != nullptr))
+    {
+        cout << "__________________________________________________" << endl;
+        cout << "Product Name: " << p -> name << endl;
+        cout << "Product ID: " << p -> id << endl;
+        cout << "Product Price: " << p -> price << endl;
+        cout << "Product Import Date: " << p -> importDate << endl;
+        cout << "Product Color: " << p -> color << endl;
+        cout << "Product Storage: " << p -> storage << endl;
+
         p = p -> next;
     }
+
+    cout << endl;
+
 }
 
+void addPosition(List *ls, int price){
+
+    if(price > 50){
+        addBegin(ls,"iphone 16 Pro Max",price, 01, "12-March-2026","blue",256);
+    }else{
+        addEnd(ls,"iphone 12 Pro Max",price, 01, "12-March-2026","blue",256);
+    }
+}
 
 int main(){
-    ListProduct *lp = createEmptyProductList();
-    addProductToBeg(lp, "Socks");
-    addProductToEnd(lp, "Shoes");
-    addProductToEnd(lp, "gloves");
-    addProductToBeg(lp, "Tie");
+    List * ls = createEmptyList();
 
-    displayAllProduct(lp);
+    addPosition(ls,600);
+    addPosition(ls,10);
+
+    display(ls);
+
 }

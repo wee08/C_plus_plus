@@ -1,3 +1,4 @@
+// 7
 #include<iostream> 
 using namespace std; 
 void sum1(double *sum, int n){ 

@@ -1,3 +1,5 @@
+// 1
+
 // the structure is stored integer value and pointer link.
 
 #include <iostream>

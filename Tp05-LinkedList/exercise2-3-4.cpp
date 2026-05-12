@@ -1,3 +1,4 @@
+// 2
 #include <iostream>
 using namespace std;
 // create a parent structure for contains data and next box
