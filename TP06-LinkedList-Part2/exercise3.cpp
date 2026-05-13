@@ -43,9 +43,9 @@ void addBegin(List  * ls,string name, int price, int id, string importDate, stri
         p -> prev = nullptr;
     
     if( ls -> size == 0){
-        ls -> head = p;
+        ls -> tail = p;
     }else {
-        ls -> head -> prev = p;
+        ls -> tail -> prev = p;
     }
 
     ls -> head = p;
@@ -61,9 +61,10 @@ void addEnd(List * ls, string name, int price, int id,string importDate, string 
         p -> color = color;
         p -> storage = storage;
         p -> prev = ls -> tail;
+        p -> next = nullptr;
 
     if( ls -> size == 0){
-        ls -> tail = p;
+        ls -> head = p;
     }else {
         ls -> tail -> next = p;
     }
@@ -90,20 +91,22 @@ void display(List * ls){
 
 }
 
-void addPosition(List *ls, int price){
+void addPosition(List *ls, string name, int price, int id,string importDate, string color, int storage){
 
     if(price > 50){
-        addBegin(ls,"iphone 16 Pro Max",price, 01, "12-March-2026","blue",256);
+        addBegin(ls,name,price, id, importDate,color,storage);
     }else{
-        addEnd(ls,"iphone 12 Pro Max",price, 01, "12-March-2026","blue",256);
+        addEnd(ls,name,price, id, importDate,color,storage);
     }
 }
 
 int main(){
     List * ls = createEmptyList();
 
-    addPosition(ls,600);
-    addPosition(ls,10);
+    addPosition(ls, "iphone 17 pro max",2000,1,"12-March-2026","blue",1);
+    addPosition(ls, "iphone xs",30,1,"2-March-2026","blue",1);
+    addPosition(ls, "iphone 17 air",1200,1,"12-March-2026","white",1);
+
 
     display(ls);
 
