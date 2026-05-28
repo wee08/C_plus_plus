@@ -57,6 +57,15 @@ void deleteStack(Stack *s){
         cout << "stack is has been deleting!" << endl;
 }
 
+void removeAllEvensData(Stack *s){
+    Node * temp = s -> top;
+    while(temp != nullptr){
+        if(temp -> data % 2 == 0) {
+            pop(s);
+        }
+        temp = temp -> next;
+    }
+}
 
 void display(Stack *s){
     Node * n = s -> top;

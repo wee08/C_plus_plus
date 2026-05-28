@@ -4,11 +4,20 @@ int main(){
     Stack * s = createStack();
     Stack * s1 = createStack();
 
-    push(s,100);
-    deleteStack(s);
+    push(s,1);
+    push(s,2);
+    push(s,3);
+    push(s,4);
+    push(s,5);
+    removeAllEvensData(s);
     display(s);
-    push(s1,1000);
-    display(s1);
+
+    // push(s,100);
+    // display(s);
+    // push(s1,1000);
+    // display(s1);
+    // deleteStack(s);
+    // display(s);
     // push(s,12);
     // push(s,12);
     // push(s,12);
