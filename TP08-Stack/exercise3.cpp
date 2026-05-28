@@ -10,7 +10,7 @@ struct Operation {
     Node * front;
     Node * back;
 };
-// 2 -> [1] []
+// 2 -> [1][] -> [][] -> [][]
 void createQueue(Operation &op){
     op.size = 0;
     op.front = nullptr;
@@ -25,8 +25,8 @@ void enQueue(Operation &op, string id){
         op.front = n;
         op.back = n;
     }else{
-        op.back -> next = n;
-        op.back = n;
+        op.back -> next = n; // contains previous data
+        op.back = n; // contains new data
     }
     op.size++;
 }
