@@ -100,6 +100,76 @@ void addPosition(List *ls, string name, int price, int id,string importDate, str
     }
 }
 
+void searchByName(List * ls, string name){
+    Product * p = ls -> head;
+    bool found = false;
+
+    while (p != nullptr){
+        if (p -> name == name){
+            cout << "__________________________________________________" << endl;
+            cout << "Product Found!" << endl;
+            cout << "Product Name: " << p -> name << endl;
+            cout << "Product ID: " << p -> id << endl;
+            cout << "Product Price: " << p -> price << endl;
+            cout << "Product Import Date: " << p -> importDate << endl;
+            cout << "Product Color: " << p -> color << endl;
+            cout << "Product Storage: " << p -> storage << endl;
+            cout << "__________________________________________________" << endl;
+            found = true;
+        }
+        p = p -> next;
+    }
+
+    if (!found){
+        cout << "Product with name '" << name << "' not found!" << endl;
+    }
+}
+
+void searchByPrice(List * ls, int price){
+    Product * p = ls -> head;
+    bool found = false;
+
+    while (p != nullptr){
+        if (p -> price == price){
+            cout << "__________________________________________________" << endl;
+            cout << "Product Found!" << endl;
+            cout << "Product Name: " << p -> name << endl;
+            cout << "Product ID: " << p -> id << endl;
+            cout << "Product Price: " << p -> price << endl;
+            cout << "Product Import Date: " << p -> importDate << endl;
+            cout << "Product Color: " << p -> color << endl;
+            cout << "Product Storage: " << p -> storage << endl;
+            cout << "__________________________________________________" << endl;
+            found = true;
+        }
+        p = p -> next;
+    }
+
+    if (!found){
+        cout << "Product with price " << price << " not found!" << endl;
+    }
+}
+
+void deleteFromBegin(List * ls){
+    if (ls -> size == 0){
+        cout << "List is empty! Nothing to delete." << endl;
+        return;
+    }
+
+    Product * temp = ls -> head;
+    ls -> head = ls -> head -> next;
+
+    if (ls -> head != nullptr){
+        ls -> head -> prev = nullptr;
+    }else{
+        ls -> tail = nullptr;
+    }
+
+    delete temp;
+    ls -> size--;
+    cout << "First product deleted successfully!" << endl;
+}
+
 int main(){
     List * ls = createEmptyList();
 
@@ -107,6 +177,8 @@ int main(){
     addPosition(ls, "iphone xs",30,1,"2-March-2026","blue",1);
     addPosition(ls, "iphone 17 air",1200,1,"12-March-2026","white",1);
 
+    searchByName(ls,"iphone xs");
+    searchByPrice(ls,1200);
 
     display(ls);
 

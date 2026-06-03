@@ -1,0 +1,13 @@
+1. A queue is a data structure that stores data in such a way that the element storedfirst
+will be retrieved first.
+2. Variables: front → points to first element  rear → points to last element  next → link to next node (linked list queue)
+- Functions: createQueue() → create empty queue
+- enqueue() → add element  dequeue() → remove element  display() → show queue
+- search() → find data
+- isEmpty() → check empty queue
+3. The main differences between using Linked list and using Queue. 
+Linked                          List Queue
+Dynamic linear structure        FIFO structure
+Insert/delete anywhere          Insert rear, delete front
+Uses nodes with pointers        Can use array or linked list
+No fixed rule                   FIFO rule

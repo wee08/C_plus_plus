@@ -59,11 +59,9 @@ void deleteStack(Stack *s){
 
 void removeAllEvensData(Stack *s){
     Node * temp = s -> top;
-    while(temp != nullptr){
-        if(temp -> data % 2 == 0) {
-            pop(s);
-        }
-        temp = temp -> next;
+
+    while(temp != nullptr && temp -> data % 2 ==0){
+        pop(s);
     }
 }
 
@@ -80,5 +78,7 @@ void display(Stack *s){
         n = n -> next;
     }
 }
+
+
 
 #endif

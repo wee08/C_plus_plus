@@ -25,7 +25,9 @@ void addPerson(List *ls, string name){
     e -> next = ls -> head; // -> nullptr
     e -> prev = nullptr;
     if(ls -> n == 0){
+        ls -> head = e;
         ls -> tail = e ;
+
     }else {
         ls -> head -> prev = e;
         ls -> head = e;
