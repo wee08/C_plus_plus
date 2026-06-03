@@ -128,38 +128,25 @@ void findTheSecondHighest(Stack * s){
     cout << "The second highest number is : " << secMax << endl;
 }
 void remvoeDuplication(Stack * s){
-    Element * e = s -> top;
-    Stack * seen = CreateStack();
-    Stack * newStack = CreateStack();
-
-    if(isEmpty(s)){
-        cout << "there is no data\n";
-        return;
-    }
+    Stack * unique = CreateStack();
+    Element * e = s->top;
     while(e != nullptr){
-        Element * check = seen->top;
-        bool isDuplicated = false;
-        while (check != nullptr)
-        {
-            if(check->value == e->value){
-                isDuplicated = true;
-
+        bool isFound = false;
+        Element * temp = unique->top;
+        while(temp != nullptr){
+            if(temp->value == e->value){
+                isFound = true;
                 break;
-
             }
-            if(isDuplicated){
-                push(seen,check->value);
-                push(newStack,e->value);
-            }
-
-            check = check->next;
+            temp = temp->next;
         }
+        if(!isFound){
+            push(unique,e->value);
+        }
+        e = e->next;
     }
-    printStack(newStack);
-    clearStack(seen);
-    delete seen;
-    clearStack(newStack);
-    delete newStack;
+    printStack(unique);
+    
 }
 Stack * primary = CreateStack();
 void reverseStack(Stack * s){
