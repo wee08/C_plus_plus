@@ -1,4 +1,4 @@
-# 📘 C++ Programming — ITC Data Structures Course
+#  C++ Programming — ITC Data Structures Course
 
 > Lab exercises (TPs) from **C++ & Data Structures** coursework at the Institute of Technology of Cambodia.
 > Each folder maps to a specific TP covering a core concept in C++ programming and data structures.
@@ -9,7 +9,7 @@
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 C_plus_plus/
@@ -28,7 +28,7 @@ C_plus_plus/
 
 ---
 
-## 🗂️ TP Breakdown
+##  TP Breakdown
 
 ### TP01 — Basic C++
 **Topics:** Variables, data types, user input/output, conditionals, loops, string handling
@@ -174,7 +174,7 @@ exercise1.exe
 
 ---
 
-## 💡 Concepts Covered
+##  Concepts Covered
 
 | Concept | TP |
 |---|---|
@@ -191,12 +191,12 @@ exercise1.exe
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Sean Manutnithya (Nithya)**
-📍 Phnom Penh, Cambodia
-🎓 2nd Year Computer Science — Institute of Technology of Cambodia
-🚀 Aspiring Full-Stack Software Engineer
+ Phnom Penh, Cambodia
+ 2nd Year Computer Science — Institute of Technology of Cambodia
+ Aspiring Full-Stack Software Engineer
 
 [![GitHub](https://img.shields.io/badge/GitHub-wee08-181717?style=flat&logo=github)](https://github.com/wee08)
 [![Email](https://img.shields.io/badge/Email-manutnithyasean%40gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:manutnithyasean@gmail.com)
