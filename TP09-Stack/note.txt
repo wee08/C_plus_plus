@@ -1,8 +1,0 @@
-[top][pre][]  [top][crr][linked1]  [top][next][linked1]
-
-[pre] = s -> top;
-[cur] = s -> top -> next; 
-
-loop curr != null 
-con curr-> data % 2 == 0
-pre -> next =  curr -> next;
